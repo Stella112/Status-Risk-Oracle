@@ -1,0 +1,29 @@
+{
+  "name": "Status Gasless Risk Oracle",
+  "description": "An autonomous confidential risk desk analyst that analyzes crypto markets via Venice AI (private inference), stores the encrypted findings perfectly on Filecoin (Agentic Storage SDK), dynamically resolves on-chain targets via ENS, and broadcasts the final IPFS CID completely gas-free to the Status Network.",
+  "operator_wallet": "0xYourWalletAddressHere",
+  "erc_8004_identity": "0xYourERC8004IdentityHere",
+  "supported_tools": [
+    "Venice AI Inference (Confidential Analyst)",
+    "Lighthouse SDK (Filecoin Protocol Labs Storage)",
+    "ENS Ethers Resolver (Dynamic Identity Target)",
+    "Status Network L2 (Gasless Tx Broadcast)"
+  ],
+  "tech_stacks": [
+    "Node.js",
+    "Ethers.js",
+    "Solidity (Paris EVM)",
+    "Lighthouse-Web3",
+    "Express (Server-Sent Events UI dashboard)"
+  ],
+  "compute_constraints": {
+    "gas_efficiency": "Strictly 0 ETH execution fee via Status Gasless L2",
+    "storage_efficiency": "Lightweight CID stored on-chain, dense data stored on Protocol Labs IPFS",
+    "inference_budget": "Tokenized private inference via Venice VVV"
+  },
+  "task_categories": [
+    "Confidential Web3 Data Analysis",
+    "Decentralized Data Archival",
+    "Autonomous Cross-Chain Orchestration"
+  ]
+}

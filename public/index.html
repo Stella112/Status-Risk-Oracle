@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status Network AI Oracle</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="glow-bg"></div>
+    <main class="container">
+        <header>
+            <h1><span class="gradient-text">Gasless AI Oracle</span></h1>
+            <p class="subtitle">Live 4-Bounty Architectural Pipeline</p>
+        </header>
+
+        <div class="panel glass">
+            <div class="status-header">
+                <div class="indicator" id="global-indicator"></div>
+                <h2 id="global-status">System Idle</h2>
+            </div>
+            
+            <button id="launch-btn" class="primary-btn">
+                <span class="btn-text">Execute Autonomous Pipeline</span>
+                <div class="btn-glow"></div>
+            </button>
+        </div>
+
+        <div class="pipeline-grid">
+            <!-- Venice Step -->
+            <div class="step-card glass" id="step-venice">
+                <div class="step-header">
+                    <span class="step-badge venice">1</span>
+                    <h3>Venice AI</h3>
+                    <div class="loader hidden"></div>
+                </div>
+                <p>Generating Private Market Analysis</p>
+                <div class="terminal output-hidden" id="out-venice"></div>
+            </div>
+
+            <!-- Filecoin Step -->
+            <div class="step-card glass" id="step-filecoin">
+                <div class="step-header">
+                    <span class="step-badge filecoin">2</span>
+                    <h3>Protocol Labs</h3>
+                    <div class="loader hidden"></div>
+                </div>
+                <p>Pinning to Filecoin via Lighthouse</p>
+                <div class="terminal output-hidden" id="out-filecoin"></div>
+            </div>
+
+            <!-- ENS Step -->
+            <div class="step-card glass" id="step-ens">
+                <div class="step-header">
+                    <span class="step-badge ens">3</span>
+                    <h3>ENS Resolver</h3>
+                    <div class="loader hidden"></div>
+                </div>
+                <p>Decentralized Oracle Targeting</p>
+                <div class="terminal output-hidden" id="out-ens"></div>
+            </div>
+
+            <!-- Status Step -->
+            <div class="step-card glass" id="step-status">
+                <div class="step-header">
+                    <span class="step-badge status">4</span>
+                    <h3>Status L2</h3>
+                    <div class="loader hidden"></div>
+                </div>
+                <p>Broadcasting 0-Gas Transaction</p>
+                <div class="terminal output-hidden" id="out-status"></div>
+            </div>
+        </div>
+
+        <div class="final-proof glass hidden" id="final-proof">
+            <h3>⛽ Gasless Execution Verified</h3>
+            <p><strong>Transaction Hash:</strong> <a href="#" id="tx-hash" target="_blank">Pending...</a></p>
+            <p><strong>Gas Paid:</strong> 0 ETH (Gasless)</p>
+            <p><strong>IPFS CID:</strong> <span id="ipfs-cid">Pending...</span></p>
+        </div>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>

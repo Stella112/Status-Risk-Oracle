@@ -1,0 +1,126 @@
+:root {
+    --bg-color: #05050A;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --venice: #A855F7;
+    --filecoin: #3B82F6;
+    --ens: #06B6D4;
+    --status: #10B981;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: var(--bg-color);
+    color: #F8FAFC;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.glow-bg {
+    position: fixed;
+    top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(circle at center, rgba(16, 185, 129, 0.05) 0%, transparent 60%);
+    z-index: -1; pointer-events: none;
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+    padding: 3rem 2rem;
+    display: flex; flex-direction: column; gap: 2rem;
+}
+
+header { text-align: center; }
+h1 { font-size: 3rem; font-weight: 800; letter-spacing: -0.05em; margin-bottom: 0.5rem; }
+.gradient-text {
+    background: linear-gradient(135deg, #10B981, #3B82F6);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.subtitle { color: #94A3B8; font-size: 1.1rem; }
+
+.glass {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 1.5rem;
+}
+
+.panel {
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+.status-header { display: flex; align-items: center; gap: 1rem; }
+.indicator {
+    width: 12px; height: 12px; border-radius: 50%;
+    background: #64748B;
+    box-shadow: 0 0 10px #64748B;
+    transition: all 0.3s ease;
+}
+.indicator.active { background: #10B981; box-shadow: 0 0 15px #10B981; }
+
+.primary-btn {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white; font-family: 'Inter'; font-weight: 600;
+    padding: 0.75rem 1.5rem; border-radius: 8px; cursor: pointer;
+    overflow: hidden; transition: all 0.2s;
+}
+.primary-btn:hover { background: rgba(255, 255, 255, 0.15); transform: translateY(-1px); }
+.primary-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.pipeline-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+}
+
+.step-card {
+    display: flex; flex-direction: column; gap: 1rem;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+}
+.step-card.active { opacity: 1; border-color: rgba(255,255,255,0.2); box-shadow: 0 8px 30px rgba(0,0,0,0.5); }
+.step-card.done { opacity: 0.9; }
+
+.step-header { display: flex; align-items: center; gap: 0.75rem; }
+.step-badge {
+    width: 24px; height: 24px; border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.8rem; font-weight: bold;
+}
+.step-badge.venice { background: rgba(168, 85, 247, 0.2); color: var(--venice); border: 1px solid var(--venice); }
+.step-badge.filecoin { background: rgba(59, 130, 246, 0.2); color: var(--filecoin); border: 1px solid var(--filecoin); }
+.step-badge.ens { background: rgba(6, 182, 212, 0.2); color: var(--ens); border: 1px solid var(--ens); }
+.step-badge.status { background: rgba(16, 185, 129, 0.2); color: var(--status); border: 1px solid var(--status); }
+
+h3 { font-size: 1.1rem; }
+p { color: #94A3B8; font-size: 0.9rem; }
+
+.loader {
+    width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.1);
+    border-top-color: white; border-radius: 50%; animation: spin 1s linear infinite;
+    margin-left: auto;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.terminal {
+    background: rgba(0,0,0,0.5); border-radius: 8px;
+    padding: 1rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem;
+    color: #A3E635; min-height: 60px; word-break: break-all;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+.output-hidden { display: none; }
+.hidden { display: none !important; }
+
+.final-proof {
+    margin-top: 1rem; border-color: var(--status);
+    background: rgba(16, 185, 129, 0.05);
+}
+.final-proof h3 { color: var(--status); margin-bottom: 1rem; }
+.final-proof a { color: #60A5FA; text-decoration: none; }
+.final-proof a:hover { text-decoration: underline; }

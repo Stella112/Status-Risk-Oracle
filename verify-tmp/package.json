@@ -1,0 +1,19 @@
+{
+  "name": "verify-tmp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^7.0.0",
+    "@nomicfoundation/hardhat-verify": "^3.0.12",
+    "dotenv": "^17.3.1",
+    "hardhat": "^3.2.0"
+  }
+}

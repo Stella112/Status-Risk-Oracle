@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Environment Variables & Secrets (CRITICAL)
+.env
+.env.*
+.DS_Store
+
+# Compiled EVM Binaries (Solidity compilation outputs)
+*.bin
+GaslessAIOracle.bin
+
+# Temporary text logs
+*.log
+agent-pl-log.txt
