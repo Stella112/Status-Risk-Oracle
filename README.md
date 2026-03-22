@@ -5,7 +5,7 @@ This project was built for the **Synthesis Open Track Hackathon** to demonstrate
 ## 🏆 The "Private Gasless Storage Oracle" Pipeline (5 Bounties)
 1. **Venice (Private AI)**: The agent exclusively uses the Venice inference API to generate fundamentally private, uncensored market reports.
 2. **Protocol Labs (Agentic Storage / Filecoin)**: Because on-chain storage is severely limited, the massive encrypted report is uploaded identically to decentralized storage via the **Lighthouse SDK**, generating a permanent `CID`.
-3. **Protocol Labs (Let the Agent Cook)**: Operating as a fully autonomous multi-tool entity, the engine natively respects the DevSpot registry structure, generating both a static `agent.json` operational manifest and an ongoing `agent_log.json` execution trail.
+3. **Protocol Labs (Let the Agent Cook / OpenClaw DevSpot)**: Operating as a fully autonomous multi-tool entity, the engine natively respects the **OpenClaw DevSpot** registry structure, generating both a static `agent.json` operational manifest and an ongoing `agent_log.json` execution trail — making this agent fully verifiable and trustworthy by other OpenClaw agents.
 4. **ENS (Decentralized Identity)**: The agent dynamically resolves the target contract over the `gasless-oracle.eth` domain, refusing hardcoded centralization. 
 5. **Status Network (Gasless L2)**: Finally, the agent anchors the IPFS CID seamlessly on the Status Network layer, executing with exactly `0` gas.
 
