@@ -15,8 +15,9 @@ app.post('/api/run-agent', async (req, res) => {
     res.setHeader('Content-Type', 'text/event-stream');
     res.setHeader('Cache-Control', 'no-cache');
     res.setHeader('Connection', 'keep-alive');
-
+    res.flushHeaders(); // Critically forces the SSE stream to open instantly on the client UI
     const sendEvent = (step, message, data = null) => {
+        console.log(`[ORACLE] ${message}`);
         res.write(`data: ${JSON.stringify({ step, message, data })}\n\n`);
     };
 
@@ -79,7 +80,7 @@ app.post('/api/run-agent', async (req, res) => {
             if (ensResolved) { contractAddress = ensResolved; } 
             else { throw new Error(); }
         } catch (e) {
-            contractAddress = fs.readFileSync('contractAddress.txt', 'utf8').trim();
+            contractAddress = "0xF6393C9fCcB2236A6Ea7502fAbBc8768b8E19E66";
         }
         sendEvent('ens_done', `ENS securely resolved to: ${contractAddress}`, contractAddress);
 

@@ -19,17 +19,24 @@ async function executePipeline() {
         const response = await fetch('/api/run-agent', { method: 'POST' });
         const reader = response.body.getReader();
         const decoder = new TextDecoder();
+        let buffer = '';
 
         while (true) {
             const { done, value } = await reader.read();
             if (done) break;
             
-            const chunk = decoder.decode(value);
-            const events = chunk.split('\n\n').filter(e => e.startsWith('data: '));
+            buffer += decoder.decode(value, { stream: true });
             
-            for (let ev of events) {
-                const data = JSON.parse(ev.replace('data: ', ''));
-                handleEvent(data);
+            let boundary = buffer.indexOf('\n\n');
+            while (boundary !== -1) {
+                const chunk = buffer.slice(0, boundary);
+                buffer = buffer.slice(boundary + 2);
+                
+                if (chunk.startsWith('data: ')) {
+                    const data = JSON.parse(chunk.replace('data: ', ''));
+                    handleEvent(data);
+                }
+                boundary = buffer.indexOf('\n\n');
             }
         }
     } catch (err) {
